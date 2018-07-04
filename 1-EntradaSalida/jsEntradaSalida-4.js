@@ -4,6 +4,10 @@
 */
 function mostrar()
 {
-	
+	var nombre;
+	//nombre="pablo";
+	nombre=prompt("");
+	//nombre=document.getElementById("elNombre").value;
+	document.getElementById("elNombre").value=nombre;
 }
 
