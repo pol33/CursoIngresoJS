@@ -1,21 +1,25 @@
+/*Se eingesan tes numeros se muestra l asuma de los treds el proedio delo stres y la rewta delos tres en unico alert*/
 
 function mostrar()
-{
-	 var base;
-	 var altura;
-	 var superficie;
-	 var perimetro;
+{	 var numeroUno;
+	 var numeroDos;
+	 var numeroTres;
 
-	 base=prompt("Inggrese la base");
-	 altura=prompt("Ingrese la altura");
+	  numeroUno=prompt("");
+	  numeroDos=prompt("");
+	  numeroTres=prompt("");
 
-	 base=parseInt(base);
-	 altura=parseInt(altura);
+	  numeroUno=parseInt(numeroUno);
+	  numeroDos=parseInt(numeroDos);
+	  numeroTres=parseInt(numeroTres);
 
-	 perimetro=base*3;
+	  suma=numeroUno+numeroDos+numeroTres;
 
-	 superficie=base*altura/2;
+	  promedio=numeroUno+numeroDos+numeroTres;
 
-	 alert("El perimetro es "+perimetro+" y a superficie es "+superficie);
+	  resta=numeroUno-numeroDos-numeroTres;
 
+	  alert("La suma:")+nuemroUno+"el promedio:"+promedio+"la resrta:"+resta);
+
+	
 }
