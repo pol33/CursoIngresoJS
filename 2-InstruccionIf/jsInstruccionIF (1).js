@@ -9,9 +9,9 @@ function mostrar()
 	if(edad==15){
 		alert("Niña bonita!!");
 	}
-	else{
+	/*else{
 		alert("nO ES UMA NIÑA BONITA");
-	}
+	}*/
 
 
 }//FIN DE LA FUNCIÓN
