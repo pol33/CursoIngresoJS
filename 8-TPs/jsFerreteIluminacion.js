@@ -10,5 +10,72 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	
+ 	var cantidad;
+ 	var marca;
+ 	var descuento;
+ 	var precioDescuento;
+ 	var TotalLamparas;
+ 	var precio;
+ 	var IIBB;
+ 	var precioIIBB;
+
+ 	cantidad=document.getElementById('Cantidad').value;
+ 	cantidad=parseInt(cantidad);
+ 	marca=document.getElementById('Marca').value;
+
+ 	precio=35;
+ 	TotalLamparas=precio*cantidad;
+
+ 	//Si compra 6 lamparas o mas:
+ 	if(cantidad>5){
+ 		precioDescuento=TotalLamparas-TotalLamparas*0.5;
+	}
+	//Si compra 5 lamparas o menos se ejecuta el siguiente else:----------------------------
+	else{
+		if(cantidad==5){
+			if(marca=="ArgentinaLuz"){
+				precioDescuento=TotalLamparas*0.4;
+			}
+			else{
+				precioDescuento=TotalLamparas-TotalLamparas*0.3;
+			}
+		}
+
+		//Si compra  4 lamparas:
+		else{
+			if(cantidad==4){
+				if(marca=="ArgentinaLuz"||marca=="FelipeLamparas"){
+				precioDescuento=TotalLamparas-TotalLamparas*0.25;
+			}
+			else{
+				precioDescuento=TotalLamparas-TotalLamparas*0.20;
+			}
+			}
+
+			//Si compra 3 lamparas:
+			if(cantidad==3){
+				if(marca=="ArgentinaLuz"){
+					precioDescuento=TotalLamparas-TotalLamparas*0.15;
+				}
+				else{
+					if(marca=="FelipeLamparas"){
+						precioDescuento=TotalLamparas-TotalLamparas*0.1;
+					}
+					else{
+						precioDescuento=TotalLamparas-TotalLamparas*0.05;
+					}
+				}
+			}
+		}
+	}//Aqui finaliza el else correspondiente a la compra de 5 lamparas o menos--------------
+	
+	//Se muestra por id el precio con el descuento.
+	document.getElementById('precioDescuento').value=precioDescuento;
+
+	precioIIBB=precioDescuento+precioDescuento*0.1;
+	/*Si el precio con el descuento supera los $120 se ejecuta el siguiente if y se
+	muestra el mensaje del impuesto por ingresos brutos.*/
+	if(precioDescuento>120){
+		alert("Usted pago $"+precioIIBB+" de IIBB.");
+	}
 }
