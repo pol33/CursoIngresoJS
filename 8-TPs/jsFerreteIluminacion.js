@@ -9,7 +9,7 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 
  */
 function CalcularPrecio () 
-{
+/*{
  	var cantidad;
  	var marca;
  	var descuento;
@@ -75,7 +75,78 @@ function CalcularPrecio ()
 	precioIIBB=precioDescuento+precioDescuento*0.1;
 	/*Si el precio con el descuento supera los $120 se ejecuta el siguiente if y se
 	muestra el mensaje del impuesto por ingresos brutos.*/
-	if(precioDescuento>120){
+	/*if(precioDescuento>120){
 		alert("Usted pago $"+precioIIBB+" de IIBB.");
 	}
+}
+*/
+{
+	var precio;
+	var descuento;
+	var IVA=0.1;
+	var marca;
+    var cantidad;
+    var precioIIBB;
+
+    cantidad=document.getElementById("Cantidad").value;
+    marca=document.getElementById("Marca").value;
+    cantidad=parseInt(cantidad);
+    precio=35;
+
+    	if (cantidad>5) 
+    	{
+    		descuento=cantidad*precio*0.5;
+    	}
+
+    switch(cantidad)
+    {
+    	case 5:
+    	if (marca=="ArgentinaLuz")
+    	{
+    		descuento=cantidad*precio*0.6;
+
+    	}
+    	else
+    	{
+    		descuento=cantidad*precio*0.7;
+    	}
+    	break;
+    	case 4:
+    		if (marca=="ArgentinaLuz"||marca=="“FelipeLamparas”")
+    		 {
+    		 	descuento=cantidad*precio*0.75;		
+    		 }
+    		 else
+    		 {
+    		 	descuento=precio*cantidad*0.8;
+    		 }
+    		 break;
+		case 3:
+		if (marca=="ArgentinaLuz")
+		 {
+		 	descuento=cantidad*precio*0.85;
+		 }
+		 else
+		 {
+		 	if (marca=="FelipeLamparas") 
+		 	{
+		 		descuento=cantidad*precio*0.9;
+		 	}
+		 	else
+		 	{
+		 		descuento=cantidad*precio*0.95;
+
+		 	}
+		 }
+		 break;
+		 }    		 	 
+
+		 	document.getElementById('precioDescuento').value=descuento;
+		 	if (descuento>120) 
+		 	{
+		 		descuento=descuento+descuento*IVA;
+		 		alert("Usted pago: $"+descuento);
+		 	}	
+    
+
 }
