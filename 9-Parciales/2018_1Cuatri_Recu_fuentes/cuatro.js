@@ -1,48 +1,36 @@
 function mostrar()
 {
-
-
-	var numeroUno;
-	var numeroDos;
-	var suma;
-	var division;
-
-
-	numeroUno=prompt("Ingrese un numero");
-	numeroDos=prompt("Ingrese otro numero");
-
-
-	if(numeroUno==numeroDos){
-		alert(numeroUno+numeroDos);
-	}
-
-	else{
-			numeroUno=parseInt(numeroUno);
-	    	numeroDos=parseInt(numeroDos)
-
-	        if(numeroUno>numeroDos){
-
-	    	division=numeroUno/numeroDos;
-	    	alert("La resta es: "+resta);
-
-	       }
-	          else{
-
-	    	  suma=numeroUno+numeroDos;
-			//alert("La suma es: "+suma);
-	
-
-	  	     if(suma<50){
-			 alert("La suma es "+suma+" y  es menor a 50.");
-	    	}
-
-	   	     else{
-			 alert("La suma es: "+suma);
-		   }
+		var numUno;
+		var numDos;
+		var salida;
+			
+		numUno=document.getElementById("numeroUno").value;
+		numDos=document.getElementById("numeroDos").value;
 		
-	}
+		if(numUno==numDos)
+		{
+			salida=numUno+numDos;
+		}
+			else
+			{
+				numUno=parseInt(numUno);
+				numDos=parseInt(numDos);
+				
+				if(numUno>numDos)
+				{
+					salida=numUno-numDos;
+				}
+				else
+				{
+					salida=numUno+numDos;
+					
+					if(salida>10)
+					{
+						salida="La suma es "+salida+" y supero el diez.";
+					}
+				}
+			}
+			
+					alert(salida);
 
-	}
-
-	
 }
