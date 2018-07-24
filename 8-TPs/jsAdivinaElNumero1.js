@@ -16,7 +16,7 @@ function comenzar()
 {
 		//numeroIngresado=document.getElementById('numero').value;
 	//Genero el número RANDOM entre 1 y 100
-	     numeroSecreto=Math.random()*600;
+	    numeroSecreto=Math.random()*600;
 		numeroSecreto=(numeroSecreto.toFixed(0));
 		contadorIntentos=0; 
 		alert(numeroSecreto );
