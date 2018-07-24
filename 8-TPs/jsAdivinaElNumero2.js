@@ -9,42 +9,87 @@
 Desde  6 Intentos hasta 10:”falta técnica”
 Más de 10 intentos: “afortunado en el amor!!”.*/
 
-var numeroSecreto; 
-var contadorIntentos=0;
-var numero=document.getElementById('numero').value;
+	var numeroSecreto; 
+	var contadorIntentos=0;
+	var numeroIngresado;
+	var mensaje;
+	var reseteoContador;
 
 function comenzar()
 {
 	//Genero el número RANDOM entre 1 y 100
 	numeroSecreto=Math.random()*10;
-	contadorIntentos++;
-	document.getElementById('intentos').value=contadorIntentos; 
-	
-
+	numeroSecreto=(numeroSecreto.toFixed(0));	
+		alert(numeroSecreto);
 }
 
 function verificar()
 {
+		numeroIngresado=document.getElementById('numero').value;
+		contadorIntentos++;
+		if(numeroIngresado==numeroSecreto){  
 
-	
-	if(numero==numeroSecreto)
-	{
-		alert("Usted es una persona con poderes mentales!!!");
+		switch(contadorIntentos)
+		{
+			case 1:
+
+			//if (numeroIngresado==numeroSecreto)
+			//	{
+					mensaje="Usted es un psiquico!!!";
+			//	}
+					contadorIntentos=0;
+			break;
+			case 2:
+
+			//if (numeroIngresado==numeroSecreto)
+			//	{
+					mensaje="Excelente persepcion!!!";
+			//	}
+			break;
+			case 3:
+
+			//if (numeroIngresado==numeroSecreto)
+			//	{
+					mensaje="Esto es suerte!!!";
+			//	}
+			break;
+			case 4:
+
+			//if (numeroIngresado==numeroSecreto)
+			//	{
+					mensaje="Excelente tecnica!!!";
+			//	}
+			break;
+			case 5:
+
+			//if (numeroIngresado==numeroSecreto)
+			//	{
+					mensaje="Usted esta en la media";
+			//	}
+			break;
+			case 6:
+			case 7:
+			case 8:
+			case 9:
+			case 10:
+
+			//if (numeroIngresado==numeroSecreto)
+			//	{
+					mensaje="Falta tecnica";
+			//	}
+			break;
+			default:
+				mensaje="Afortunado en el amor";
+		}
+		
 	}
 	else
-	{
-		if (numero>numeroSecreto)
-		 {
-		 	alert("Te pasaste!!!");
-		 }
-		 else	
-		 	{
-		 		alert("Te falto!!");
-		 	}
-	}
-	
-}
+			{
+				mensaje="Siga participando";
+			}
 
-	
+			alert(mensaje);
+			document.getElementById('intentos').value=contadorIntentos; 
+
 
 }
