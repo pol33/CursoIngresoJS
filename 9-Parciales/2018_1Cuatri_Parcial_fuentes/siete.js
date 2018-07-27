@@ -1,76 +1,100 @@
 function mostrar()
-{
-	var notas;
-	var canatNotas=0;
-	var edad;
-	var cantNotas=0;
-	var acumNotas=0;
+{/*
+	var nota;
 	var promedio;
-	var notaMinima;
-	var sexoNotaMinima;
-	var edadMinima;
-	var sexoEdadMinima;
-	var varonesMayores=0;
-	var cantMujer=0;
-	var edadPrimeraMujer;
-	var notaPrimeraMujer;
-	var respuesta;
-
-		while(cantNotas<5)
+	var suma=0;
+	var sexo;
+	var sexoMin;
+	var sexoVarones;
+	var notaMin;
+	var notaMax;
+	var notaVarones=0;
+	var aux=0;
+	var i;
+	
+	for(i=1;i<6;i++)
+	{
+		nota=prompt("");
+		nota=parseInt(nota);
+		while(nota==isNaN)
 		{
-			nota=prompt("Ingrese una nota");
+		nota=prompt("Nota invalida");
+		}
+		//suma+=nota;
+		sexo=prompt("Elija sexo");
+		while(sexo!="f"&&sexo!="m")
+		{
+			sexo=prompt("Sexo invalido");
+		}
+		if(nota<notaMin || aux==0)
+		{
+			notaMin=nota;
+			sexoMin=sexo;
+			aux=1;
+		}
+		if(nota>notaMax ||aux==0)
+		{
+			notaMax=nota;
+		}
+		if(nota>=6 && sexo=="m")
+		{
+			notaVarones++;
+			//sexoVarones=;
+		}
+		suma+=nota;
+	}
+	alert("a)El promedio: "+suma/5+"b)Nota mas baja y su sexo: "+notaMin+" y "+sexoMin+"c)cantidad de varones con notas>=6: "+notaVarones);
+*/
+		var nota;
+		var sexo;
+		var promedio;
+		var notaMinima;
+		var sexoNotaBaja;
+		var cantidadVarones=0;
+		var respuesta;
+		var cantNotas=0;
+		var acumNotas=0;
+
+		while(respuesta!="no")
+		{
+			nota=prompt("ingrese una nota");
 			nota=parseInt(nota);
 			while(nota>10||nota<0)
 			{
 				nota=prompt("Nota invalida");
-				nota=parseInt(nota);
 			}
-			sexo=prompt("Ingrese un sexo");
-			while(sexo!="f"&&sexo!="m")
+			sexo=prompt("Ingrese f,fememnino y m:masculino");
+			while(sexo!="m"&&sexo!="f")
 			{
 				sexo=prompt("Sexo invalido");
 			}
-			edad=prompt("Ingrese la edad");
-			edad=parseInt(edad);
-
-			cantMujer++;
 			cantNotas++;
 			acumNotas+=nota;
-			promedio=acumNotas/5;
+			promedio=acumNotas/cantNotas;
+
 			if (cantNotas==1||nota<notaMinima)
 			 {
 			 	notaMinima=nota;
-			 	sexoNotaMinima=sexo;
+			 	sexoVarones=sexo;
+			 	
 			 }
-			 if (sexo=="m"&&edad>18&&nota>=6)
-			  {
-			  	varonesMayores++;
-			  }
-			 if (edad<edadMinima||cantNotas==1)
-			  {
-			  	edadMinima=edad;
-			  	sexoEdadMinima=sexo;
-			  }
-			if (sexo=="f"&&cantMujer==1)
+			if (sexo=="m"&&nota>=6)
 			 {
-			 	edadPrimeraMujer=edad;
-			 	notaPrimeraMujer=nota;
+			 	cantidadVarones++;
 			 }
-			 else
-			 {
-			 	alert("No hubo mujeres");
-			 }
+		
+		respuesta=prompt("Desea continuar");
 
-			 
-		}
-
+		}	 
+			
+			 alert("Elpromedio de las notas totales es: "+promedio+" la nota minima y su sexo es: "+notaMinima+" "+sexoVarones+"C- "+cantidadVarones)
 
 
 
 
 
-
-
-
-
+					
+	
+		
+		
 }
